@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工商管理 - 自考考前资料</title>
+    <!-- Halfmoon CSS -->
+    <link href="halfmoon.min.css" rel="stylesheet">
+</head>
+<style>
+    #main {
+        padding: 15px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    a {
+        margin-bottom: 20px;
+        display: block;
+    }
+</style>
+
+<body>
+    <div id="main">
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            如果页面空白,请多刷新几次 <strong><a id="reload_btn" href="#" class="alert-link"
+                    style="display: inline;">或者也可以点击这里获取最新数据</a></strong>.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div id="dataList"></div>
+    </div>
+
+    <script src="jquery.min.js"></script>
+    <!-- Option 1: Bootstrap JS bundle with Popper -->
+    <script src="bootstrap.bundle.min.js"></script>
+    <script>
+        // 禁止右键菜单
+        $(document).on('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        // 禁止F12键
+        $(document).on('keydown', function (e) {
+            if (e.which === 123 || e.key === "F12" || e.key === "Inspect") {
+                e.preventDefault();
+            }
+        });
+
+        $(document).ready(function () {
+            // 页面加载获取数据
+            loadData();
+
+            // 点击按钮重新加载数据
+            $('#reload_btn').click(function () {
+                alert("段落被点击了。");
+            });
+        });
+        // 重新加载数据
+        function reloadData() {
+
+        }
+
+        // 页面加载完成后加载数据方法
+        function loadData() {
+            // 判断本地是否有数据
+            let local_data_list = localStorage.getItem('data_list')
+
+            if (local_data_list == undefined || local_data_list == null || local_data_list == 'undefined') {
+
+                // 登录
+                let local_token = localStorage.getItem('local_token')
+
+                if (local_token == undefined || local_token == null || local_token == 'undefined') {
+                    // 请求登录
+                    var loginData = JSON.stringify({ "userName": "15575141967", "passwd": "LiYang664243", "type": "pass" });
+                    // 发送POST请求
+                    $.ajax({
+                        type: 'POST',
+                        url: 'https://study.mshengedu.com/study/sys/login/webPassLogin',
+                        data: loginData,
+                        contentType: 'application/json', // 设置请求头Content-Type为application/json
+                        success: function (response) {
+
+                            // 保存到本地
+                            localStorage.setItem('local_token', response.data.token)
+
+                            // 拉取资料
+                            var jsonData = JSON.stringify({ "materialType": "1", "subjectId": -1, "count": 0, "limit": 10000 });
+                            $.ajax({
+                                type: 'POST',
+                                url: 'https://study.mshengedu.com/study/app/usercenter/myStudyMaterialList',
+                                data: jsonData,
+                                contentType: 'application/json', // 设置请求头Content-Type为application/json
+                                headers: { 'Authorization': response.data.token }, // 设置自定义头参数
+                                success: function (response2) {
+                                    // 请求成功时执行的操作
+                                    console.log('成功获取资料:', response2);
+                                }
+                            });
+
+                        }
+                    });
+
+                } else {
+                    // 无需登录
+                    var jsonData = JSON.stringify({ "materialType": "1", "subjectId": -1, "count": 0, "limit": 10000 });
+                    var loginData = JSON.stringify({ "userName": "15575141967", "passwd": "LiYang664243", "type": "pass" });
+                    $.ajax({
+                        type: 'POST',
+                        url: 'https://study.mshengedu.com/study/app/usercenter/myStudyMaterialList',
+                        data: jsonData,
+                        contentType: 'application/json', // 设置请求头Content-Type为application/json
+                        headers: { 'Authorization': local_token }, // 设置自定义头参数
+                        success: function (response) {
+                            // 请求成功时执行的操作
+                            try {
+                                if (response.indexOf('用户未登录') > 1) {
+                                    // 重新登陆并且拉取资料
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: 'https://study.mshengedu.com/study/sys/login/webPassLogin',
+                                        data: loginData,
+                                        contentType: 'application/json', // 设置请求头Content-Type为application/json
+                                        success: function (response2) {
+
+                                            // 保存到本地
+                                            localStorage.setItem('local_token', response2.data.token)
+
+                                            // 拉取资料
+                                            $.ajax({
+                                                type: 'POST',
+                                                url: 'https://study.mshengedu.com/study/app/usercenter/myStudyMaterialList',
+                                                data: jsonData,
+                                                contentType: 'application/json', // 设置请求头Content-Type为application/json
+                                                headers: { 'Authorization': response2.data.token }, // 设置自定义头参数
+                                                success: function (response3) {
+                                                    // 请求成功时执行的操作
+                                                    console.log('成功获取资料:', response3);
+                                                    var dataList = $('#dataList');
+
+                                                    // 清空已有数据
+                                                    dataList.empty();
+                                                    // 储存数据到本地
+                                                    localStorage.setItem('data_list', JSON.stringify(response3.data.materialList))
+                                                    // 遍历数组并渲染每个元素
+                                                    response3.data.materialList.forEach(function (item) {
+                                                        var titleItem = $('<h5>').text(item.subjectName + ' - ' + item.moduleName); // 创建 标题
+                                                        dataList.append(titleItem); // 添加到元素中
+
+                                                        // var linkItem = $('<a>').text(item.url); // 创建 下的链接内容
+                                                        dataList.append('<a href="' + item.url + '" target="_blank">PDF下载地址： ' + item.name + '</a>'); // 添加到元素中
+
+                                                    });
+                                                }
+                                            });
+
+                                        }
+                                    });
+                                }
+                            } catch {
+                                console.log('成功获取资料:', response);
+                                // 储存数据到本地
+                                localStorage.setItem('data_list', JSON.stringify(response.data.materialList))
+
+                                var dataList = $('#dataList');
+
+                                // 清空已有数据
+                                dataList.empty();
+
+                                // 遍历数组并渲染每个元素
+                                response.data.materialList.forEach(function (item) {
+                                    var titleItem = $('<h5>').text(item.subjectName + ' - ' + item.moduleName); // 创建 标题
+                                    dataList.append(titleItem); // 添加到元素中
+
+                                    // var linkItem = $('<a>').text(item.url); // 创建 下的链接内容
+                                    dataList.append('<a href="' + item.url + '" target="_blank">PDF下载地址： ' + item.name + '</a>'); // 添加到元素中
+
+                                });
+                            }
+                        }
+                    });
+                }
+            } else {
+                // 本地数据
+                let local_data_list_obj = JSON.parse(local_data_list)
+
+                var dataList = $('#dataList');
+
+                // 清空已有数据
+                dataList.empty();
+
+                // 遍历数组并渲染每个元素
+                local_data_list_obj.forEach(function (item) {
+                    var titleItem = $('<h5>').text(item.subjectName + ' - ' + item.moduleName); // 创建 标题
+
+                    dataList.append(titleItem); // 添加到元素中
+
+                    // var linkItem = $('<a>').text(item.url); // 创建 下的链接内容
+                    dataList.append('<a href="' + item.url + '" target="_blank">PDF下载地址： ' + item.name + '</a>'); // 添加到元素中
+
+                });
+            }
+
+        }
+    </script>
+</body>
+
+</html>
