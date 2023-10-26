@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工商管理 - 科目章节资料</title>
+    <!-- Halfmoon CSS -->
+    <link rel="stylesheet" href="halfmoon.min.css">
+    <link rel="stylesheet" href="bootstrap-icons.css">
+</head>
+<style>
+    #main {
+        padding: 15px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    a {
+        display: block;
+    }
+</style>
+
+<body>
+    <div id="main">
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-emoji-heart-eyes" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path
+                    d="M11.315 10.014a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.488 0c1.398-.864 3.544 1.838-.952 3.434-3.067-3.554.19-4.858.952-3.434z" />
+            </svg>
+            <strong><a href="index.html" class="alert-link" target="_blank" style="display: inline;">回到首页</a></strong>.
+        </div>
+        <div id="dataList"></div>
+    </div>
+
+    <script src="jquery.min.js"></script>
+    <!-- Option 1: Bootstrap JS bundle with Popper -->
+    <script src="bootstrap.bundle.min.js"></script>
+    <script>
+
+        const dataList = [
+            {
+                "id": 108100398,
+                "code": "ZL000000058780",
+                "moduleId": 108021425,
+                "moduleName": "英语（二）串讲课",
+                "subjectName": "英语（二）",
+                "subjectId": 1080000000000113,
+                "sort": 2,
+                "name": "00015英语二串讲课.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-3-28/uZ7m9rsrT8Emt6lj01Pf7IHkzTbhqFfREWnZkIVjo7zRFvKgHh.pdf",
+                "type": 4,
+                "updateTime": "2023-03-30 18:56:02"
+            },
+            {
+                "id": 108098381,
+                "code": "ZL000000057679",
+                "moduleId": 108021426,
+                "moduleName": "英语（二）精讲课",
+                "subjectName": "英语（二）",
+                "subjectId": 1080000000000113,
+                "sort": 8,
+                "name": "00015英语二精讲课6.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-3-2/diBNSFB5C1846JdKu8d8DQap7Sma02oRZsRtP0lSZCgNKeRNEU.pdf",
+                "type": 4,
+                "updateTime": "2023-03-08 09:56:34"
+            },
+            {
+                "id": 108098379,
+                "code": "ZL000000057678",
+                "moduleId": 108021426,
+                "moduleName": "英语（二）精讲课",
+                "subjectName": "英语（二）",
+                "subjectId": 1080000000000113,
+                "sort": 7,
+                "name": "00015英语二精讲课5.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-3-2/TPxj7IMXo4izZlcOQgU3FIASmqKc18Qb94bD8BgYXGCHzIUxav.pdf",
+                "type": 4,
+                "updateTime": "2023-03-08 09:56:17"
+            },
+            {
+                "id": 108098377,
+                "code": "ZL000000057677",
+                "moduleId": 108021426,
+                "moduleName": "英语（二）精讲课",
+                "subjectName": "英语（二）",
+                "subjectId": 1080000000000113,
+                "sort": 6,
+                "name": "00015英语二精讲课4.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-3-2/jrF3BGC1gMeU8dK8JTPq0KMwsERxG1JqUu4m6i0jfrbskxmjnj.pdf",
+                "type": 4,
+                "updateTime": "2023-03-08 09:56:02"
+            },
+            {
+                "id": 108098375,
+                "code": "ZL000000057676",
+                "moduleId": 108021426,
+                "moduleName": "英语（二）精讲课",
+                "subjectName": "英语（二）",
+                "subjectId": 1080000000000113,
+                "sort": 5,
+                "name": "00015英语二精讲课3.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-3-2/uL3Tvn8eg1xPvq6BrTAHl3uaoIl5RrKa1uVvHeAubWlTtwh8cW.pdf",
+                "type": 4,
+                "updateTime": "2023-03-08 09:55:46"
+            },
+            {
+                "id": 108098373,
+                "code": "ZL000000057675",
+                "moduleId": 108021426,
+                "moduleName": "英语（二）精讲课",
+                "subjectName": "英语（二）",
+                "subjectId": 1080000000000113,
+                "sort": 4,
+                "name": "00015英语二精讲课2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-3-2/07QrCAIgNIfeKnr98gYMvaGK8ylffZ98nPadjzHgxHZxJpVPiX.pdf",
+                "type": 4,
+                "updateTime": "2023-03-08 09:55:31"
+            },
+            {
+                "id": 108098371,
+                "code": "ZL000000057674",
+                "moduleId": 108021426,
+                "moduleName": "英语（二）精讲课",
+                "subjectName": "英语（二）",
+                "subjectId": 1080000000000113,
+                "sort": 3,
+                "name": "00015英语二精讲课1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-2-27/XUVT4qIwQDFXUSexCzmBvhoy82Y9oxuZZqQdsFroDN8IknCCWL.pdf",
+                "type": 4,
+                "updateTime": "2023-03-08 09:55:13"
+            },
+            {
+                "id": 108083751,
+                "code": "ZL000000048549",
+                "moduleId": 108018008,
+                "moduleName": "企业会计学串讲课",
+                "subjectName": "企业会计学",
+                "subjectId": 1080000000000206,
+                "sort": 2,
+                "name": "00055企业会计学串讲课.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-9-27/fbgkd5bUc3a2TVDUgD9rDERugRFhShhiZW4ig0gfkxB7yM6lG9.pdf",
+                "type": 4,
+                "updateTime": "2022-09-28 09:46:33"
+            },
+            {
+                "id": 108077375,
+                "code": "ZL000000045344",
+                "moduleId": 108018009,
+                "moduleName": "企业会计学精讲课",
+                "subjectName": "企业会计学",
+                "subjectId": 1080000000000206,
+                "sort": 7,
+                "name": "00055企业会计学精讲6.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-7-20/2G4AR6b5iZb4f28p0P61PBKnNOZO71Opsd1i5ZR6EWPBmHmOXi.pdf",
+                "type": 4,
+                "updateTime": "2022-08-01 14:16:01"
+            },
+            {
+                "id": 108077268,
+                "code": "ZL000000045289",
+                "moduleId": 108018009,
+                "moduleName": "企业会计学精讲课",
+                "subjectName": "企业会计学",
+                "subjectId": 1080000000000206,
+                "sort": 6,
+                "name": "00055企业会计学精讲5.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-7-20/DDsTOnl3I0Z6gLCoYgji04yeJmHSdz3LO65WlZAxrQeGjg3Cry.pdf",
+                "type": 4,
+                "updateTime": "2022-07-29 17:23:07"
+            },
+            {
+                "id": 108076727,
+                "code": "ZL000000045008",
+                "moduleId": 108018009,
+                "moduleName": "企业会计学精讲课",
+                "subjectName": "企业会计学",
+                "subjectId": 1080000000000206,
+                "sort": 5,
+                "name": "00055企业会计学精讲4.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-7-20/eNmTbpPH4cXMrSUXyDeHTiuMb8IFc7k50qvbhAEcoofVMeTWwt.pdf",
+                "type": 4,
+                "updateTime": "2022-07-27 16:44:24"
+            },
+            {
+                "id": 108076071,
+                "code": "ZL000000044674",
+                "moduleId": 108018009,
+                "moduleName": "企业会计学精讲课",
+                "subjectName": "企业会计学",
+                "subjectId": 1080000000000206,
+                "sort": 4,
+                "name": "00055企业会计学精讲3.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-7-19/kzJL7CBQz9OeyQRFOPfg5lR0V7X1eJojqOBvFZeIJUYWpTN6Pj.pdf",
+                "type": 4,
+                "updateTime": "2022-07-19 19:12:06"
+            },
+            {
+                "id": 108075894,
+                "code": "ZL000000044584",
+                "moduleId": 108018009,
+                "moduleName": "企业会计学精讲课",
+                "subjectName": "企业会计学",
+                "subjectId": 1080000000000206,
+                "sort": 3,
+                "name": "00055企业会计学精讲2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-7-13/vJmqNyvHI5lw3FKHrOaQbWSqolbPZB2KqJ5PsVIaiQV1hEV6J5.pdf",
+                "type": 4,
+                "updateTime": "2022-07-18 16:30:00"
+            },
+            {
+                "id": 108075761,
+                "code": "ZL000000044508",
+                "moduleId": 108018009,
+                "moduleName": "企业会计学精讲课",
+                "subjectName": "企业会计学",
+                "subjectId": 1080000000000206,
+                "sort": 2,
+                "name": "00055企业会计学精讲1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-7-13/Cv4IUObD7o11twXuQPv4K4ynsClAOkUrPCnVQQo0UGRIODFAtR.pdf",
+                "type": 4,
+                "updateTime": "2022-07-15 14:22:23"
+            },
+            {
+                "id": 108017693,
+                "code": "ZL000000012783",
+                "moduleId": 108007688,
+                "moduleName": "学位英语冲刺课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 2,
+                "name": "学位英语本科冲刺2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-18/1DKPHZ99QnXO9BtudtZ0EsAN7XEbpr97ErcD47LapQ0r64hzbl.pdf",
+                "type": 4,
+                "updateTime": "2021-03-19 13:56:34"
+            },
+            {
+                "id": 108017692,
+                "code": "ZL000000012782",
+                "moduleId": 108007688,
+                "moduleName": "学位英语冲刺课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 1,
+                "name": "学位英语本科冲刺1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-18/L4MKxRGCjYoG3kUL7p6QuaWJzV3X8WmNvbuOIsR4oE3U0IUgfJ.pdf",
+                "type": 4,
+                "updateTime": "2021-03-19 13:56:20"
+            },
+            {
+                "id": 108017454,
+                "code": "ZL000000012667",
+                "moduleId": 108007687,
+                "moduleName": "学位英语专题课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 7,
+                "name": "学位英语本科专题7写作.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-16/l7yb70ILtcQmTbKnk19kW83gOHTuM4ud18ay24Jkum860r5F5J.pdf",
+                "type": 4,
+                "updateTime": "2021-03-18 16:45:40"
+            },
+            {
+                "id": 108017453,
+                "code": "ZL000000012666",
+                "moduleId": 108007687,
+                "moduleName": "学位英语专题课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 6,
+                "name": "学位英语本科专题6英译汉.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-16/jBt03g8Rz5lUu0yY8YGijQGEM1l8fwqvNVIWKRSmDGcuc0SuXW.pdf",
+                "type": 4,
+                "updateTime": "2021-03-18 16:45:25"
+            },
+            {
+                "id": 108017441,
+                "code": "ZL000000012660",
+                "moduleId": 108007687,
+                "moduleName": "学位英语专题课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 5,
+                "name": "学位英语本科专题5完形填空.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-16/lZjUatTRliKC0rP8XmOll1BLlYz7ivFxYs1aXuEBy6l04d4OKn.pdf",
+                "type": 4,
+                "updateTime": "2021-03-18 15:55:33"
+            },
+            {
+                "id": 108017440,
+                "code": "ZL000000012659",
+                "moduleId": 108007687,
+                "moduleName": "学位英语专题课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 4,
+                "name": "学位英语本科专题4词汇句型.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-16/Y3d2odh5VHEK2QSJQZr2RBKJLcF9PhVUr1Qa49fBsGF6iIG59r.pdf",
+                "type": 4,
+                "updateTime": "2021-03-18 15:55:17"
+            },
+            {
+                "id": 108017438,
+                "code": "ZL000000012657",
+                "moduleId": 108007687,
+                "moduleName": "学位英语专题课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 3,
+                "name": "学位英语本科专题3完成对话.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-16/0fGOHNYAds0sMLfyYutjG6akz8aFTL8cx0m2MMa4ptaStgdd67.pdf",
+                "type": 4,
+                "updateTime": "2021-03-18 15:55:01"
+            },
+            {
+                "id": 108017437,
+                "code": "ZL000000012656",
+                "moduleId": 108007687,
+                "moduleName": "学位英语专题课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 2,
+                "name": "学位英语本科专题2阅读2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-16/zBi3NUkVki3OJ5Ldn1Kv1NmLvTgudlsDHgqZntGzgi91ZUVfhb.pdf",
+                "type": 4,
+                "updateTime": "2021-03-18 15:54:41"
+            },
+            {
+                "id": 108017436,
+                "code": "ZL000000012655",
+                "moduleId": 108007687,
+                "moduleName": "学位英语专题课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 1,
+                "name": "学位英语本科专题1阅读1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-16/yLcKHZTglHU9XWLOW37pJ055J8X1ZESvMdcpCiK81TfXxAb595.pdf",
+                "type": 4,
+                "updateTime": "2021-03-18 15:54:23"
+            },
+            {
+                "id": 108017421,
+                "code": "ZL000000012653",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 17,
+                "name": "学位英语本科精讲17从句2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-16/IEByr8pFIhqOA5kaBukExlDfAQmtdVf3DSvukyNGsgZnOvkbC4.pdf",
+                "type": 4,
+                "updateTime": "2021-03-18 15:49:50"
+            },
+            {
+                "id": 108017420,
+                "code": "ZL000000012652",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 16,
+                "name": "学位英语本科精讲16从句1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-16/ymPv0Fsuy8LbUkcrDmJKRaZSvl1mqFAO3V72xDZ7bxpL0sqd7S.pdf",
+                "type": 4,
+                "updateTime": "2021-03-18 15:49:32"
+            },
+            {
+                "id": 108017419,
+                "code": "ZL000000012651",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 15,
+                "name": "学位英语本科精讲15虚拟语气.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-16/n4DiBbQeAE584Qwewgj1aBFwg7avobMg1FvoOFCMvhndaLHdRh.pdf",
+                "type": 4,
+                "updateTime": "2021-03-18 15:49:16"
+            },
+            {
+                "id": 108017418,
+                "code": "ZL000000012650",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 14,
+                "name": "学位英语本科精讲14非谓语2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-16/cpk2i9A8yi4KCeofZOEM2Vo8XaGjTjU76t8WMVQTff9NZriUsH.pdf",
+                "type": 4,
+                "updateTime": "2021-03-18 15:49:00"
+            },
+            {
+                "id": 108017416,
+                "code": "ZL000000012648",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 13,
+                "name": "学位英语本科精讲13非谓语1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-16/7jix4pmseeBgb2IYqVU93uHKiUA58Sefod0YLZCgk31NGxB7jh.pdf",
+                "type": 4,
+                "updateTime": "2021-03-18 15:48:43"
+            },
+            {
+                "id": 108017414,
+                "code": "ZL000000012647",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 12,
+                "name": "学位英语本科精讲12特殊句型2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-16/MC1tknpFB7yxLnh3WRly68eSVPZk2E7HL6YooIpS0RLwDhczM3.pdf",
+                "type": 4,
+                "updateTime": "2021-03-18 15:48:29"
+            },
+            {
+                "id": 108016305,
+                "code": "ZL000000011886",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 11,
+                "name": "学位英语(本科)精讲11特殊句型1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-5/iJulHL4x6qKtJlwgkr19dt9wcl2l9u8O6xW1npRT7irN31MoQl.pdf",
+                "type": 4,
+                "updateTime": "2021-03-06 11:40:46"
+            },
+            {
+                "id": 108016304,
+                "code": "ZL000000011885",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 10,
+                "name": "学位英语(本科)精讲10主谓一致就近原则.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-5/T4LntiRDYsvB2PAEzLaGoFCLsVc81hJISjPteK2tnwFCV56eF7.pdf",
+                "type": 4,
+                "updateTime": "2021-03-06 11:40:30"
+            },
+            {
+                "id": 108016299,
+                "code": "ZL000000011880",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 9,
+                "name": "学位英语(本科)精讲9特殊疑问句.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-5/bKuwwmxeJOZ6qh7GQx58Vb3XVRGs69jAuy9yKsAvnQvMEVwaEw.pdf",
+                "type": 4,
+                "updateTime": "2021-03-06 11:39:58"
+            },
+            {
+                "id": 108016298,
+                "code": "ZL000000011879",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 8,
+                "name": "学位英语(本科)精讲8基础句型1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-5/zaeQJsHOK9oK6jKd12v67qtlRGJ5cKbN4OVsQgmIG2K56i0fRM.pdf",
+                "type": 4,
+                "updateTime": "2021-03-06 11:39:43"
+            },
+            {
+                "id": 108016296,
+                "code": "ZL000000011877",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 7,
+                "name": "学位英语(本科)精讲7时态2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-5/HJuKJ3ENqYIvlK7UI1TVHIV1RXdgtLOO5HKFUnpZcxW0nd26uZ.pdf",
+                "type": 4,
+                "updateTime": "2021-03-06 11:39:25"
+            },
+            {
+                "id": 108016293,
+                "code": "ZL000000011874",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 6,
+                "name": "学位英语(本科)精讲6时态1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-5/AVHUHhyMT1VEdZGmvkrFODaDy5yO7pQBh69EWhTwvv4XRcZ6sO.pdf",
+                "type": 4,
+                "updateTime": "2021-03-06 11:39:03"
+            },
+            {
+                "id": 108016291,
+                "code": "ZL000000011872",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 5,
+                "name": "学位英语(本科)精讲5词性4.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-5/OzjvtTTK7JtegCBQvCPgzI2d7vp7QTH0VV39jgqZcrmeJLy7Ou.pdf",
+                "type": 4,
+                "updateTime": "2021-03-06 11:38:42"
+            },
+            {
+                "id": 108016289,
+                "code": "ZL000000011870",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 4,
+                "name": "学位英语(本科)精讲4词性3.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-5/XOqJZmswz9xGeVXC0IIAvyb75AeLpbYy1Ro2ZHh0wIOUxHfoan.pdf",
+                "type": 4,
+                "updateTime": "2021-03-06 11:38:19"
+            },
+            {
+                "id": 108016283,
+                "code": "ZL000000011864",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 3,
+                "name": "学位英语(本科)精讲3词性2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-5/FM2o7gyB8rVfHKgpVlOZygIO0FIuUerV5JzZwcWSjcYzsenUKY.pdf",
+                "type": 4,
+                "updateTime": "2021-03-06 11:37:24"
+            },
+            {
+                "id": 108016278,
+                "code": "ZL000000011859",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 2,
+                "name": "学位英语(本科)精讲2词性1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-5/AKlxATdzovdEalBebBrL97Mjpod572rzDqEvc1fyld2ZS1j8A4.pdf",
+                "type": 4,
+                "updateTime": "2021-03-06 11:36:40"
+            },
+            {
+                "id": 108016276,
+                "code": "ZL000000011857",
+                "moduleId": 108007686,
+                "moduleName": "学位英语精讲课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 1,
+                "name": "学位英语(本科)精讲1语音.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-5/6fvrDvrXoyT1r5so2M2HwIHcoTX98JPs1Vpfkx6hoZrotvBwSw.pdf",
+                "type": 4,
+                "updateTime": "2021-03-06 11:36:26"
+            },
+            {
+                "id": 108016248,
+                "code": "ZL000000011841",
+                "moduleId": 108007685,
+                "moduleName": "学位英语导学课",
+                "subjectName": "学位英语",
+                "subjectId": 1080000000002129,
+                "sort": 1,
+                "name": "学位英语(本科)导学.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2021-3-5/GAf1FrcUG1K0qkJtdSiQyxHgHbzH2tDy6SaJyJfLnZL08OEmDf.pdf",
+                "type": 4,
+                "updateTime": "2021-03-06 11:32:05"
+            },
+            {
+                "id": 108091194,
+                "code": "ZL000000053113",
+                "moduleId": 108020915,
+                "moduleName": "11741市场与市场营销串讲课",
+                "subjectName": "市场与市场营销",
+                "subjectId": 1080000000013329,
+                "sort": 2,
+                "name": "11741市场与市场营销串讲课.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-17/sbaMhySoWO5KuIa6y81JRdzdAbbnhF7TJ6zD1CLLyfHUKzMndZ.pdf",
+                "type": 4,
+                "updateTime": "2022-12-17 19:22:11"
+            },
+            {
+                "id": 108088234,
+                "code": "ZL000000051280",
+                "moduleId": 108020916,
+                "moduleName": "11741市场与市场营销精讲课",
+                "subjectName": "市场与市场营销",
+                "subjectId": 1080000000013329,
+                "sort": 7,
+                "name": "11741市场与市场营销精讲6.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-11-17/RKQcNwk1Xg7H30tAZo6YvAeZYE8pIAaAcimDXVVA5J26zsE0EQ.pdf",
+                "type": 4,
+                "updateTime": "2022-11-19 14:19:08"
+            },
+            {
+                "id": 108088214,
+                "code": "ZL000000051270",
+                "moduleId": 108020916,
+                "moduleName": "11741市场与市场营销精讲课",
+                "subjectName": "市场与市场营销",
+                "subjectId": 1080000000013329,
+                "sort": 6,
+                "name": "11741市场与市场营销精讲5.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-11-17/nTE07IoinBIWlVOPVYCJeAw7oDBvTje1F4jcKb4qZyzr8KyYQe.pdf",
+                "type": 4,
+                "updateTime": "2022-11-19 09:10:15"
+            },
+            {
+                "id": 108087991,
+                "code": "ZL000000051126",
+                "moduleId": 108020916,
+                "moduleName": "11741市场与市场营销精讲课",
+                "subjectName": "市场与市场营销",
+                "subjectId": 1080000000013329,
+                "sort": 5,
+                "name": "11741市场与市场营销精讲4.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-11-11/L20qmIzKF4PPUwceMlxA2bYQNbaCmjqbEtuT4Ix0KIFaLIW54N.pdf",
+                "type": 4,
+                "updateTime": "2022-11-17 11:04:13"
+            },
+            {
+                "id": 108087699,
+                "code": "ZL000000050955",
+                "moduleId": 108020916,
+                "moduleName": "11741市场与市场营销精讲课",
+                "subjectName": "市场与市场营销",
+                "subjectId": 1080000000013329,
+                "sort": 4,
+                "name": "11741市场与市场营销精讲3.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-11-11/TnawgHznedPxIN1DEJAzY2WA5yYG2OOotxQcYVvAW1eCMfUkgt.pdf",
+                "type": 4,
+                "updateTime": "2022-11-12 17:51:56"
+            },
+            {
+                "id": 108087501,
+                "code": "ZL000000050851",
+                "moduleId": 108020916,
+                "moduleName": "11741市场与市场营销精讲课",
+                "subjectName": "市场与市场营销",
+                "subjectId": 1080000000013329,
+                "sort": 3,
+                "name": "11741市场与市场营销精讲2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-11-3/H0cIPpjkG0W44lDOpVI59IqarebPUGE2o8NOtcbXmm1xuaLf4j.pdf",
+                "type": 4,
+                "updateTime": "2022-11-10 16:56:37"
+            },
+            {
+                "id": 108087360,
+                "code": "ZL000000050775",
+                "moduleId": 108020916,
+                "moduleName": "11741市场与市场营销精讲课",
+                "subjectName": "市场与市场营销",
+                "subjectId": 1080000000013329,
+                "sort": 2,
+                "name": "11741市场与市场营销精讲1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-11-3/6DmtvljEHoHlMx6Dn1MusiGGagijIKFbmFI5d1u6CyHhgT4RM5.pdf",
+                "type": 4,
+                "updateTime": "2022-11-08 18:58:26"
+            },
+            {
+                "id": 108118401,
+                "code": "ZL000000070837",
+                "moduleId": 108026614,
+                "moduleName": "11743企业组织与经营环境串讲课",
+                "subjectName": "企业组织与经营环境",
+                "subjectId": 1080000000013331,
+                "sort": 2,
+                "name": "11743企业组织与经营环境串讲课.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-9-18/mfUV4c7FFB0EDmIlEIU9vyIsPGsvQyVGKxDZgJnRHsR0Ce0yPc.pdf",
+                "type": 4,
+                "updateTime": "2023-09-21 17:53:06"
+            },
+            {
+                "id": 108111376,
+                "code": "ZL000000066585",
+                "moduleId": 108026615,
+                "moduleName": "11743企业组织与经营环境精讲课",
+                "subjectName": "企业组织与经营环境",
+                "subjectId": 1080000000013331,
+                "sort": 7,
+                "name": "11743企业组织与经营环境精讲6.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-7-12/Ko2qchjadQ2n5jbFtjKznM1KYfpMLE8t1ZqTNCpCwg8PWmJD5X.pdf",
+                "type": 4,
+                "updateTime": "2023-07-12 17:19:44"
+            },
+            {
+                "id": 108111374,
+                "code": "ZL000000066584",
+                "moduleId": 108026615,
+                "moduleName": "11743企业组织与经营环境精讲课",
+                "subjectName": "企业组织与经营环境",
+                "subjectId": 1080000000013331,
+                "sort": 6,
+                "name": "11743企业组织与经营环境精讲5.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-7-12/bUxPrDk91jKdVCPJ1yl831FPO21pxjj2TJixs3NU0term4pTxk.pdf",
+                "type": 4,
+                "updateTime": "2023-07-12 16:54:17"
+            },
+            {
+                "id": 108111176,
+                "code": "ZL000000066448",
+                "moduleId": 108026615,
+                "moduleName": "11743企业组织与经营环境精讲课",
+                "subjectName": "企业组织与经营环境",
+                "subjectId": 1080000000013331,
+                "sort": 5,
+                "name": "11743企业组织与经营环境精讲4.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-7-11/8LLpTn8QGX3iGzYKjDpxIvNn52FiTcp0mGgiyQBkVKMBY7SzmA.pdf",
+                "type": 4,
+                "updateTime": "2023-07-11 11:04:59"
+            },
+            {
+                "id": 108110812,
+                "code": "ZL000000066241",
+                "moduleId": 108026615,
+                "moduleName": "11743企业组织与经营环境精讲课",
+                "subjectName": "企业组织与经营环境",
+                "subjectId": 1080000000013331,
+                "sort": 4,
+                "name": "11743企业组织与经营环境精讲3.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-7-4/eumAJ0HDuerGtEcgtPjYRc5Rj57f7BNfujDiC9laofsqpmdo0d.pdf",
+                "type": 4,
+                "updateTime": "2023-07-04 16:30:58"
+            },
+            {
+                "id": 108110478,
+                "code": "ZL000000066039",
+                "moduleId": 108026615,
+                "moduleName": "11743企业组织与经营环境精讲课",
+                "subjectName": "企业组织与经营环境",
+                "subjectId": 1080000000013331,
+                "sort": 3,
+                "name": "11743企业组织与经营环境精讲2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-6-12/Lobk0zxKB2iGf0UhhCdu22iltorsF6bAqFiZXwMBKG7OFSt5d9.pdf",
+                "type": 4,
+                "updateTime": "2023-06-30 11:40:07"
+            },
+            {
+                "id": 108110145,
+                "code": "ZL000000065834",
+                "moduleId": 108026615,
+                "moduleName": "11743企业组织与经营环境精讲课",
+                "subjectName": "企业组织与经营环境",
+                "subjectId": 1080000000013331,
+                "sort": 2,
+                "name": "11743企业组织与经营环境精讲1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-6-12/R4eEeRUeayzEEq0n3orSUYH3t1hV8S0nlo47IQhNUFmiNtscfu.pdf",
+                "type": 4,
+                "updateTime": "2023-06-28 15:52:47"
+            },
+            {
+                "id": 108092268,
+                "code": "ZL000000053725",
+                "moduleId": 108020920,
+                "moduleName": "11744会计原理与实务串讲课",
+                "subjectName": "会计原理与实务",
+                "subjectId": 1080000000013332,
+                "sort": 2,
+                "name": "11744会计原理与实务广东串讲课.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-20/SGtce8uL6UZKfKlXbXW6uKM7uVpHyVksqV8quOm8UH78kO4g2w.pdf",
+                "type": 4,
+                "updateTime": "2022-12-27 14:33:09"
+            },
+            {
+                "id": 108090448,
+                "code": "ZL000000052636",
+                "moduleId": 108020921,
+                "moduleName": "11744会计原理与实务精讲课",
+                "subjectName": "会计原理与实务",
+                "subjectId": 1080000000013332,
+                "sort": 6,
+                "name": "11744会计原理与实务广东精讲5.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-8/Qp7NswlVnHGh7pyH7PSi5KgA8ONXynSnlDdwyNJJspfeySZ5ua.pdf",
+                "type": 4,
+                "updateTime": "2022-12-10 16:49:49"
+            },
+            {
+                "id": 108090373,
+                "code": "ZL000000052597",
+                "moduleId": 108020921,
+                "moduleName": "11744会计原理与实务精讲课",
+                "subjectName": "会计原理与实务",
+                "subjectId": 1080000000013332,
+                "sort": 7,
+                "name": "11744会计原理与实务广东精讲6.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-8/i3c84KVrmspLV8gzRCDuE0UZWngLuUtUlSjDoj3jMcHh9wlbg3.pdf",
+                "type": 4,
+                "updateTime": "2022-12-09 17:36:34"
+            },
+            {
+                "id": 108090369,
+                "code": "ZL000000052595",
+                "moduleId": 108020921,
+                "moduleName": "11744会计原理与实务精讲课",
+                "subjectName": "会计原理与实务",
+                "subjectId": 1080000000013332,
+                "sort": 5,
+                "name": "11744会计原理与实务广东精讲4.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-8/sgrT8hG48moGd0SqEkaJ6K4NfYjPRzFfMLczQ0MRqqzjmlRJDB.pdf",
+                "type": 4,
+                "updateTime": "2022-12-09 17:35:04"
+            },
+            {
+                "id": 108090068,
+                "code": "ZL000000052432",
+                "moduleId": 108020921,
+                "moduleName": "11744会计原理与实务精讲课",
+                "subjectName": "会计原理与实务",
+                "subjectId": 1080000000013332,
+                "sort": 4,
+                "name": "11744会计原理与实务广东精讲3.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-5/nEkniDyJGrU2obeIHeq35OgmzUuGvzNG4R0DuxY4eOqnTIWkCg.pdf",
+                "type": 4,
+                "updateTime": "2022-12-06 13:02:14"
+            },
+            {
+                "id": 108089939,
+                "code": "ZL000000052356",
+                "moduleId": 108020921,
+                "moduleName": "11744会计原理与实务精讲课",
+                "subjectName": "会计原理与实务",
+                "subjectId": 1080000000013332,
+                "sort": 3,
+                "name": "11744会计原理与实务广东精讲2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-2/wKxzFxHvhGvIRuuSK1bxYkbx91CE7qEPYLaurNLTonDvi9Zti1.pdf",
+                "type": 4,
+                "updateTime": "2022-12-04 14:07:34"
+            },
+            {
+                "id": 108089837,
+                "code": "ZL000000052302",
+                "moduleId": 108020921,
+                "moduleName": "11744会计原理与实务精讲课",
+                "subjectName": "会计原理与实务",
+                "subjectId": 1080000000013332,
+                "sort": 2,
+                "name": "11744会计原理与实务广东精讲1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-2/W2oXLrRrjnKDfJVnORnhPVK0a0zz8DXW4jnKoLYhP6CoWha6ud.pdf",
+                "type": 4,
+                "updateTime": "2022-12-03 11:22:24"
+            },
+            {
+                "id": 108092292,
+                "code": "ZL000000053742",
+                "moduleId": 108024173,
+                "moduleName": "11745战略管理与伦理串讲课",
+                "subjectName": "战略管理与伦理",
+                "subjectId": 1080000000013333,
+                "sort": 2,
+                "name": "11745战略管理与伦理串讲课.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-20/83eq8EZwBfv57Na5HjVAURpFOF9L4t0V4DBMpURE9iHBvyIhjX.pdf",
+                "type": 4,
+                "updateTime": "2022-12-27 17:13:44"
+            },
+            {
+                "id": 108090456,
+                "code": "ZL000000052640",
+                "moduleId": 108024174,
+                "moduleName": "11745战略管理与伦理精讲课",
+                "subjectName": "战略管理与伦理",
+                "subjectId": 1080000000013333,
+                "sort": 7,
+                "name": "11745战略管理与伦理精讲6.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-8/9mqshlIIs2NGPvMabaTFDELjaB1ANqWmXKjVilw5IAmUedh2zn.pdf",
+                "type": 4,
+                "updateTime": "2022-12-10 17:54:46"
+            },
+            {
+                "id": 108090423,
+                "code": "ZL000000052623",
+                "moduleId": 108024174,
+                "moduleName": "11745战略管理与伦理精讲课",
+                "subjectName": "战略管理与伦理",
+                "subjectId": 1080000000013333,
+                "sort": 6,
+                "name": "11745战略管理与伦理精讲5.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-8/YeqFxmfz5IYkuHn9t0dhYNQJ3DfLKfJlET9LonIeL04bGHrZJG.pdf",
+                "type": 4,
+                "updateTime": "2022-12-10 11:49:33"
+            },
+            {
+                "id": 108090421,
+                "code": "ZL000000052622",
+                "moduleId": 108024174,
+                "moduleName": "11745战略管理与伦理精讲课",
+                "subjectName": "战略管理与伦理",
+                "subjectId": 1080000000013333,
+                "sort": 5,
+                "name": "11745战略管理与伦理精讲4.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-8/IY9B2SXAgIC6NlGUIq9iMnqjGem85kruPoIwDWuOb3Mc1ktS7G.pdf",
+                "type": 4,
+                "updateTime": "2022-12-10 11:31:57"
+            },
+            {
+                "id": 108090096,
+                "code": "ZL000000052446",
+                "moduleId": 108024174,
+                "moduleName": "11745战略管理与伦理精讲课",
+                "subjectName": "战略管理与伦理",
+                "subjectId": 1080000000013333,
+                "sort": 4,
+                "name": "11745战略管理与伦理精讲3.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-5/ZM9onAtC9erfWYttxWVSWwxYPrdMmQWmXeDEGJicQqtqqm9Ygh.pdf",
+                "type": 4,
+                "updateTime": "2022-12-06 16:45:20"
+            },
+            {
+                "id": 108089942,
+                "code": "ZL000000052357",
+                "moduleId": 108024174,
+                "moduleName": "11745战略管理与伦理精讲课",
+                "subjectName": "战略管理与伦理",
+                "subjectId": 1080000000013333,
+                "sort": 3,
+                "name": "11745战略管理与伦理精讲2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-2/ePUUyXQxOfxVlVFwgXImUn5G9C1V4y6A7roD9K6Wr4eYYHb7Xp.pdf",
+                "type": 4,
+                "updateTime": "2022-12-04 15:22:06"
+            },
+            {
+                "id": 108089833,
+                "code": "ZL000000052300",
+                "moduleId": 108024174,
+                "moduleName": "11745战略管理与伦理精讲课",
+                "subjectName": "战略管理与伦理",
+                "subjectId": 1080000000013333,
+                "sort": 2,
+                "name": "11745战略管理与伦理精讲1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-2/zCfuLZhSbMAwbyUxYqYrD5djSU34MIuU7ggFJZ6zhCYUCKMc8b.pdf",
+                "type": 4,
+                "updateTime": "2022-12-03 10:34:05"
+            },
+            {
+                "id": 108116029,
+                "code": "ZL000000069377",
+                "moduleId": 108020926,
+                "moduleName": "11746国际商务与国际营销精讲课",
+                "subjectName": "国际商务与国际营销",
+                "subjectId": 1080000000013334,
+                "sort": 2,
+                "name": "11746国际商务与国际营销精讲1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-8-24/I5dO7sVjhMRmQnzB0kY9cMfadaCKy0vWAUTpPwgazqX5D3uly9.pdf",
+                "type": 4,
+                "updateTime": "2023-08-29 14:05:23"
+            },
+            {
+                "id": 108098489,
+                "code": "ZL000000057737",
+                "moduleId": 108020926,
+                "moduleName": "11746国际商务与国际营销精讲课",
+                "subjectName": "国际商务与国际营销",
+                "subjectId": 1080000000013334,
+                "sort": 3,
+                "name": "11746国际商务与国际营销精讲2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-3-8/2eyL7CsThpOz9zDRKQvJfBDiKoDZqgZui0YFZRHDb9THcSnJya.pdf",
+                "type": 4,
+                "updateTime": "2023-03-09 09:56:20"
+            },
+            {
+                "id": 108092015,
+                "code": "ZL000000053565",
+                "moduleId": 108020925,
+                "moduleName": "11746国际商务与国际营销串讲课",
+                "subjectName": "国际商务与国际营销",
+                "subjectId": 1080000000013334,
+                "sort": 2,
+                "name": "11746国际商务与国际营销串讲.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-20/no6VUeQUyXsCQIfnCgXZWihpxLzJHtwM8NtYTUaswswzUsHeWQ.pdf",
+                "type": 4,
+                "updateTime": "2022-12-24 12:59:28"
+            },
+            {
+                "id": 108089694,
+                "code": "ZL000000052223",
+                "moduleId": 108020926,
+                "moduleName": "11746国际商务与国际营销精讲课",
+                "subjectName": "国际商务与国际营销",
+                "subjectId": 1080000000013334,
+                "sort": 7,
+                "name": "11746国际商务与国际营销精讲6.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-12-1/XDFEyOjG4I8wLuINrYMJgFOWljyGk5zLyfa151HJK1w9M35qZU.pdf",
+                "type": 4,
+                "updateTime": "2022-12-01 17:10:25"
+            },
+            {
+                "id": 108089289,
+                "code": "ZL000000051911",
+                "moduleId": 108020926,
+                "moduleName": "11746国际商务与国际营销精讲课",
+                "subjectName": "国际商务与国际营销",
+                "subjectId": 1080000000013334,
+                "sort": 6,
+                "name": "11746国际商务与国际营销精讲5.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-11-25/1b7Boy6nX0RUxHL4uTwCqkc6shSTBBCHGKmrNIRYn1f6Tk50ZD.pdf",
+                "type": 4,
+                "updateTime": "2022-11-29 17:39:15"
+            },
+            {
+                "id": 108089108,
+                "code": "ZL000000051774",
+                "moduleId": 108020926,
+                "moduleName": "11746国际商务与国际营销精讲课",
+                "subjectName": "国际商务与国际营销",
+                "subjectId": 1080000000013334,
+                "sort": 5,
+                "name": "11746国际商务与国际营销精讲4.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-11-25/eKytU1yrJlmiPpusKAw6fCMTUPeJoU0d9l0IXI70EDBWBJ9ZF3.pdf",
+                "type": 4,
+                "updateTime": "2022-11-27 17:09:20"
+            },
+            {
+                "id": 108089020,
+                "code": "ZL000000051728",
+                "moduleId": 108020926,
+                "moduleName": "11746国际商务与国际营销精讲课",
+                "subjectName": "国际商务与国际营销",
+                "subjectId": 1080000000013334,
+                "sort": 4,
+                "name": "11746国际商务与国际营销精讲3.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-11-25/voYR3udnYIK817lGd3VV2V38RKHLzpo6OQ2RYMBJAd2FdTeNSn.pdf",
+                "type": 4,
+                "updateTime": "2022-11-26 12:18:25"
+            },
+            {
+                "id": 108080372,
+                "code": "ZL000000046859",
+                "moduleId": 108018918,
+                "moduleName": "11747管理学与人力资源管理串讲课",
+                "subjectName": "管理学与人力资源管理",
+                "subjectId": 1080000000013335,
+                "sort": 2,
+                "name": "11747管理学与人力资源管理串讲.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-8-26/rb39TQsAfTJ0ys7KZHwE9EHFsYNQROnrwCHakpCBYECuKWy7fF.pdf",
+                "type": 4,
+                "updateTime": "2022-08-29 17:45:15"
+            },
+            {
+                "id": 108068972,
+                "code": "ZL000000040892",
+                "moduleId": 108018919,
+                "moduleName": "11747管理学与人力资源管理精讲课",
+                "subjectName": "管理学与人力资源管理",
+                "subjectId": 1080000000013335,
+                "sort": 7,
+                "name": "11747管理学与人力资源管理精讲6.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-5-6/aH6FeSi0VRnjqcMZqeAvRS83DXSQp8caXyx3KtSVifZxO3Zwen.pdf",
+                "type": 4,
+                "updateTime": "2022-05-06 16:30:07"
+            },
+            {
+                "id": 108068431,
+                "code": "ZL000000040648",
+                "moduleId": 108018919,
+                "moduleName": "11747管理学与人力资源管理精讲课",
+                "subjectName": "管理学与人力资源管理",
+                "subjectId": 1080000000013335,
+                "sort": 6,
+                "name": "11747管理学与人力资源管理精讲5.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-4-28/MbabZ9icPsYbOfVDZiYfdAnsb49NPfrdlM5sUjjKqWL5Ki3UXR.pdf",
+                "type": 4,
+                "updateTime": "2022-05-06 16:08:04"
+            },
+            {
+                "id": 108068207,
+                "code": "ZL000000040535",
+                "moduleId": 108018919,
+                "moduleName": "11747管理学与人力资源管理精讲课",
+                "subjectName": "管理学与人力资源管理",
+                "subjectId": 1080000000013335,
+                "sort": 5,
+                "name": "11747管理学与人力资源管理精讲4.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-4-28/UJ9LrwBDRybFbxna3IVK3hE980pOidqPvXf3W13LIWHZvGkJ5T.pdf",
+                "type": 4,
+                "updateTime": "2022-05-06 16:08:01"
+            },
+            {
+                "id": 108067635,
+                "code": "ZL000000040233",
+                "moduleId": 108018919,
+                "moduleName": "11747管理学与人力资源管理精讲课",
+                "subjectName": "管理学与人力资源管理",
+                "subjectId": 1080000000013335,
+                "sort": 3,
+                "name": "11747管理学与人力资源管理精讲2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-4-21/GH60ymgAGqhYTZXAjJ1kBp5FUXgHTNNDf9KO28Bx0jj5QE9221.pdf",
+                "type": 4,
+                "updateTime": "2022-04-24 17:23:11"
+            },
+            {
+                "id": 108067548,
+                "code": "ZL000000040191",
+                "moduleId": 108018919,
+                "moduleName": "11747管理学与人力资源管理精讲课",
+                "subjectName": "管理学与人力资源管理",
+                "subjectId": 1080000000013335,
+                "sort": 4,
+                "name": "11747管理学与人力资源管理精讲3.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-4-21/9cloya7GuQP2gTXaqex2HzoJpxY71QeZAKcKikpcx6O68s8q74.pdf",
+                "type": 4,
+                "updateTime": "2022-04-23 17:58:47"
+            },
+            {
+                "id": 108067206,
+                "code": "ZL000000040020",
+                "moduleId": 108018919,
+                "moduleName": "11747管理学与人力资源管理精讲课",
+                "subjectName": "管理学与人力资源管理",
+                "subjectId": 1080000000013335,
+                "sort": 2,
+                "name": "11747管理学与人力资源管理精讲1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2022-4-13/Wx1WsYdhABhMBBDsBPCn0pra7I72vqOL5tJ3YgvmKBCAztAo63.pdf",
+                "type": 4,
+                "updateTime": "2022-04-19 18:01:53"
+            },
+            {
+                "id": 108118746,
+                "code": "ZL000000071039",
+                "moduleId": 108026604,
+                "moduleName": "11748商务运营管理串讲课",
+                "subjectName": "商务运营管理",
+                "subjectId": 1080000000013336,
+                "sort": 2,
+                "name": "11748商务运营管理串讲课.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-9-21/GXZOoaMTHD1QS4QZWcGDVJUgqiyrxxl8WLzs0OhQzAfmgCep9D.pdf",
+                "type": 4,
+                "updateTime": "2023-09-27 14:25:32"
+            },
+            {
+                "id": 108106481,
+                "code": "ZL000000063817",
+                "moduleId": 108026605,
+                "moduleName": "11748商务运营管理精讲课",
+                "subjectName": "商务运营管理",
+                "subjectId": 1080000000013336,
+                "sort": 7,
+                "name": "11748商务运营管理精讲6.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-4-25/eXDsjVaavzNuStFKAHwL21fGQ32UBH2N61tQ3OAw3RwJdl6Moo.pdf",
+                "type": 4,
+                "updateTime": "2023-05-09 14:16:16"
+            },
+            {
+                "id": 108106258,
+                "code": "ZL000000063705",
+                "moduleId": 108026605,
+                "moduleName": "11748商务运营管理精讲课",
+                "subjectName": "商务运营管理",
+                "subjectId": 1080000000013336,
+                "sort": 6,
+                "name": "11748商务运营管理精讲5.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-4-25/wO3t7NHYrMfYZqJs9AuT6rCVmfLkh5RiIL52jbw0ajjWtz6V9g.pdf",
+                "type": 4,
+                "updateTime": "2023-05-06 16:39:16"
+            },
+            {
+                "id": 108106256,
+                "code": "ZL000000063704",
+                "moduleId": 108026605,
+                "moduleName": "11748商务运营管理精讲课",
+                "subjectName": "商务运营管理",
+                "subjectId": 1080000000013336,
+                "sort": 5,
+                "name": "11748商务运营管理精讲4.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-4-25/Olkz4zZKp6bqHVJaye4n5y8VC7HlZga1wqvqyrleT0eykhWbB7.pdf",
+                "type": 4,
+                "updateTime": "2023-05-06 16:39:05"
+            },
+            {
+                "id": 108105944,
+                "code": "ZL000000063530",
+                "moduleId": 108026605,
+                "moduleName": "11748商务运营管理精讲课",
+                "subjectName": "商务运营管理",
+                "subjectId": 1080000000013336,
+                "sort": 4,
+                "name": "11748商务运营管理精讲3.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-4-25/bUy9YmsMj165ReGs1nmpchyhi8zdxOOLwwptPJwQKdz9gvjrBv.pdf",
+                "type": 4,
+                "updateTime": "2023-04-27 14:48:53"
+            },
+            {
+                "id": 108105255,
+                "code": "ZL000000063143",
+                "moduleId": 108026605,
+                "moduleName": "11748商务运营管理精讲课",
+                "subjectName": "商务运营管理",
+                "subjectId": 1080000000013336,
+                "sort": 3,
+                "name": "11748商务运营管理精讲2.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-4-15/GlnXCkOK3Vy7NYmqQjc0Bm3L3rCM9GM0xi7PoocloHPinc6B93.pdf",
+                "type": 4,
+                "updateTime": "2023-04-18 11:23:22"
+            },
+            {
+                "id": 108105253,
+                "code": "ZL000000063142",
+                "moduleId": 108026605,
+                "moduleName": "11748商务运营管理精讲课",
+                "subjectName": "商务运营管理",
+                "subjectId": 1080000000013336,
+                "sort": 2,
+                "name": "11748商务运营管理精讲1.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-4-15/93hyTd9YJHSC4fxLxvBhDDnmqvRaiRnHRXxPdY1v7WQAYXqH3x.pdf",
+                "type": 4,
+                "updateTime": "2023-04-18 11:23:10"
+            },
+            {
+                "id": 108096830,
+                "code": "ZL000000056773",
+                "moduleId": 108025016,
+                "moduleName": "英语通识基础课",
+                "subjectName": "英语基础（非考试科目，系统赠送课程）",
+                "subjectId": 1080000000015062,
+                "sort": 2,
+                "name": "英语通识课课件已校对.pdf",
+                "style": "pdf",
+                "url": "https://file.mshiedu.com/bizfile/2023-2-11/QGaIt3mwzN5xBXF6dMqoFjSpcIh17YaW92gc8R3eQq6g14EjFi.pdf",
+                "type": 4,
+                "updateTime": "2023-02-23 17:13:46"
+            }
+        ]
+        // 禁止右键菜单
+        $(document).on('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        // 禁止F12键
+        $(document).on('keydown', function (e) {
+            if (e.which === 123 || e.key === "F12" || e.key === "Inspect") {
+                e.preventDefault();
+            }
+        });
+
+        $(document).ready(function () {
+            // 分组列表
+
+            const groupedData = dataList.reduce((result, item) => {
+                // 使用 模块名称分组
+                const key = item.moduleName;
+                if (!result[key]) {
+                    result[key] = [];
+                }
+                result[key].push(item);
+                return result;
+            }, {});
+
+
+            // 遍历分组后的数据，并且渲染页面
+            const dataListDiv = $('#dataList');
+
+            // // 清空已有数据
+            dataListDiv.empty();
+
+            for (const key in groupedData) {
+                if (groupedData.hasOwnProperty(key)) {
+                    // console.log(`分组键: ${key}`);
+
+                    // 换行
+                    dataListDiv.append('<br/>'); // 添加到元素中
+                    
+                    // 标题头信息
+                    const titleItem = $('<h5>').text(key); // 创建 标题
+                    dataListDiv.append(titleItem); // 添加到元素中
+
+                    // 遍历当前分组好的列表
+                    const groupItems = groupedData[key];
+                    groupItems.forEach(item => {
+                        // 标题下的内容
+                        const linkItem = $('<a>').text(item.url); // 创建 下的链接内容
+                        dataListDiv.append('<a href="' + item.url + '" target="_blank">PDF下载地址： ' + item.name + '</a>'); // 添加到元素中
+                        console.log('当前分组键下的列表对象', item);
+
+                    });
+                }
+            }
+
+
+
+        });
+    </script>
+</body>
+
+</html>
