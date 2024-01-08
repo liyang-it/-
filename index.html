@@ -77,16 +77,16 @@
     </div>
   </div>
   <script>
-    // document.addEventListener('contextmenu', function (e) {
-    //     e.preventDefault();
-    //     location.reload();
-    // });
-    // document.onkeydown = function (e) {
-    //     if (e.which === 123 || e.key === "F12"  || e.key === "Inspect") {
-    //         e.preventDefault();
-    //         location.reload();
-    //     }
-    // };
+     document.addEventListener('contextmenu', function (e) {
+         e.preventDefault();
+         location.reload();
+     });
+     document.onkeydown = function (e) {
+         if (e.which === 123 || e.key === "F12"  || e.key === "Inspect") {
+             e.preventDefault();
+             location.reload();
+         }
+     };
     async function openImage(domId){
       const url = document.getElementById(domId).src
       window.open(url)
